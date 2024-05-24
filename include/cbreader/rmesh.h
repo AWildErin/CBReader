@@ -144,7 +144,13 @@ struct RMesh
 
 	std::vector<Mesh> triggerBoxes;
 
-	std::vector<Entity> entities;
+	std::vector<EntityScreen> screenEntities;
+	std::vector<EntityWaypoint> waypointEntities;
+	std::vector<EntityLight> lightEntities;
+	std::vector<EntitySpotLight> spotlightEntities;
+	std::vector<EntitySoundEmitter> soundEmitterEntities;
+	std::vector<EntityPlayerStart> playerStartEntities;
+	std::vector<EntityModel> modelEntities;
 
 	/**
 	* Reads the specified RMesh file

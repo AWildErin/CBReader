@@ -52,59 +52,54 @@ bool RMesh::Read(const std::string& path)
 		}
 	}
 
-	/**
-	@todo This is broken, for some reason it doesn't read the next entity correctly on 173_opt.rmesh
-
-	entityCount = stream.read<std::uint32_t>();
+	std::uint32_t entityCount = stream.read<std::uint32_t>();
 	for (int i = 0; i < entityCount; i++)
 	{
-		std::uint32_t classNameLength = stream.read<std::uint32_t>();
-		std::string className = stream.read_string(classNameLength, false);
+		std::string className = stream.read_string(stream.read<std::uint32_t>(), false);
 
 		if (className == "screen")
 		{
 			EntityScreen ent;
-			ent.Read(stream, classNameLength, className);
-			entities.push_back(ent);
+			ent.Read(stream, className);
+			screenEntities.push_back(ent);
 		}
 		else if (className == "waypoint")
 		{
 			EntityWaypoint ent;
-			ent.Read(stream, classNameLength, className);
-			entities.push_back(ent);
+			ent.Read(stream, className);
+			waypointEntities.push_back(ent);
 		}
 		else if (className == "light")
 		{
 			EntityLight ent;
-			ent.Read(stream, classNameLength, className);
-			entities.push_back(ent);
+			ent.Read(stream, className);
+			lightEntities.push_back(ent);
 		}
 		else if (className == "spotlight")
 		{
 			EntitySpotLight ent;
-			ent.Read(stream, classNameLength, className);
-			entities.push_back(ent);
+			ent.Read(stream, className);
+			spotlightEntities.push_back(ent);
 		}
 		else if (className == "soundemitter")
 		{
 			EntitySoundEmitter ent;
-			ent.Read(stream, classNameLength, className);
-			entities.push_back(ent);
+			ent.Read(stream, className);
+			soundEmitterEntities.push_back(ent);
 		}
 		else if (className == "playerstart")
 		{
 			EntityPlayerStart ent;
-			ent.Read(stream, classNameLength, className);
-			entities.push_back(ent);
+			ent.Read(stream, className);
+			playerStartEntities.push_back(ent);
 		}
 		else if (className == "model")
 		{
 			EntityModel ent;
-			ent.Read(stream, classNameLength, className);
-			entities.push_back(ent);
+			ent.Read(stream, className);
+			modelEntities.push_back(ent);
 		}
 	}
-	*/
 
 	return true;
 }
