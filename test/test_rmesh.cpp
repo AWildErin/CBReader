@@ -44,6 +44,12 @@ TEST(RMesh, read_triggerboxes)
 	EXPECT_EQ(rmesh.collisionMesh.surfaces.size(), 1);
 	EXPECT_EQ(rmesh.collisionMesh.surfaces[0].vertices.size(), 18);
 	EXPECT_EQ(rmesh.collisionMesh.surfaces[0].triangles.size(), 8);
+
+	// Test the first 2 model entities
+	EXPECT_STREQ(rmesh.modelEntities[0].className.data(), "model");
+	EXPECT_STREQ(rmesh.modelEntities[0].path.data(), "lamp2.x");
+	EXPECT_STREQ(rmesh.modelEntities[1].className.data(), "model");
+	EXPECT_STREQ(rmesh.modelEntities[1].path.data(), "lamp2.x");
 }
 
 /** Reads an RMesh file from the SCP: NTF Mod. This file incorporates hasNoColl in the header. */
