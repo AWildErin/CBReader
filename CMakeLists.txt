@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/bufferstream")
 
-option(BUILD_TESTS "Build tests for the CB Reader" ON)
+option(BUILD_TESTS "Build tests for the CB Reader" OFF)
 
 set(CBREADER_SRC
 	${CMAKE_CURRENT_LIST_DIR}/include/cbreader/types.h
