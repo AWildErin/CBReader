@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/bufferstream")
 
-option(BUILD_TESTS "Build tests for the CB Reader" ON)
+option(BUILD_TESTS "Build tests for the CB Reader" OFF)
 
 set(CBREADER_SRC
 	${CMAKE_CURRENT_LIST_DIR}/include/cbreader/types.h
@@ -38,6 +38,6 @@ if(BUILD_TESTS)
     )
     target_link_libraries(${PROJECT_NAME}Test PUBLIC ${PROJECT_NAME} gtest_main)
 
-	#include(GoogleTest)
-	#gtest_discover_tests(${PROJECT_NAME}Test)
+	include(GoogleTest)
+	gtest_discover_tests(${PROJECT_NAME}Test)
 endif()

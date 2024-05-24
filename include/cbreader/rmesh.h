@@ -15,7 +15,10 @@ struct Header
 	std::uint32_t header_length = 0;
 	std::string header;
 
+	/** Defines whether or not the RMesh file has any triggers embedded within the file. */
 	bool hasTriggerBox = false;
+
+	/** NTF Mod specific property. */
 	bool hasNoColl = false;
 };
 
