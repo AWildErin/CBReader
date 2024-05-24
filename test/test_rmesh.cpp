@@ -45,6 +45,13 @@ TEST(RMesh, read_triggerboxes)
 	EXPECT_EQ(rmesh.collisionMesh.surfaces[0].vertices.size(), 18);
 	EXPECT_EQ(rmesh.collisionMesh.surfaces[0].triangles.size(), 8);
 
+	// Test trigger boxes
+	EXPECT_EQ(rmesh.triggerBoxes.size(), 3);
+	EXPECT_STREQ(rmesh.triggerBoxes[0].name.data(), "173scene_timer");
+	EXPECT_STREQ(rmesh.triggerBoxes[1].name.data(), "173scene_activated");
+	EXPECT_STREQ(rmesh.triggerBoxes[2].name.data(), "173scene_end");
+
+
 	// Test the first 2 model entities
 	EXPECT_STREQ(rmesh.modelEntities[0].className.data(), "model");
 	EXPECT_STREQ(rmesh.modelEntities[0].path.data(), "lamp2.x");

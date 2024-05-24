@@ -54,6 +54,7 @@ struct Mesh
 {
 	std::vector<Surface> surfaces;
 
+	/** Only valid for TriggerBoxes */
 	std::string name;
 };
 
