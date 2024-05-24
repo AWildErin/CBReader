@@ -113,6 +113,10 @@ struct EntitySpotLight : public EntityLight
 struct EntitySoundEmitter : public Entity
 {
 	void Read(BufferStream& stream, std::string _className) override;
+
+	// https://github.com/Regalis11/scpcb/blob/edb8fe0840b78f14d1aef3a0bf6174630e7be296/MapSystem.bb#L181
+	std::uint32_t sound = 0;
+	float range = 0.f;
 };
 
 struct EntityPlayerStart : public Entity

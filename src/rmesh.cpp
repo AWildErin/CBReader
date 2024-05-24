@@ -248,9 +248,12 @@ void EntitySoundEmitter::Read(BufferStream& stream, std::string _className)
 	/// @todo Handle sound emitters, will need to look more into the SCP:CB code to
 	/// determine how to read these correctly. for now we will just skip over them
 	stream
-		.skip<float>(3)
-		.skip<std::uint32_t>()
-		.skip<float>();
+		.read(position.x)
+		.read(position.y)
+		.read(position.z)
+
+		.read(sound)
+		.read(range);
 }
 
 void EntityPlayerStart::Read(BufferStream& stream, std::string _className)
