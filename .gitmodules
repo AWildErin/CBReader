@@ -1,0 +1,3 @@
+[submodule "thirdparty/bufferstream"]
+	path = thirdparty/bufferstream
+	url = https://github.com/craftablescience/BufferStream.git

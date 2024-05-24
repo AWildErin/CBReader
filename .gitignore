@@ -1,0 +1,13 @@
+# IDEs
+.idea/
+.vs/
+.vscode/
+
+# Project exclude paths
+cmake-build-*/
+out
+build/
+
+# Generated
+test/config.h
+.github/docs/generated
