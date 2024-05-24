@@ -17,33 +17,33 @@ TEST(RMesh, read_triggerboxes)
 	EXPECT_STREQ(rmesh.header.header.data(), "RoomMesh.HasTriggerBox");
 
 	// Length of the header string.
-	EXPECT_EQ(rmesh.header.header_length, 22);
+	EXPECT_EQ(rmesh.header.header.size(), 22);
 
 	// This RMesh file should have trigger boxes but not "hasNoColl"
 	EXPECT_TRUE(rmesh.header.hasTriggerBox);
 	EXPECT_FALSE(rmesh.header.hasNoColl);
 
-	EXPECT_EQ(rmesh.drawnMesh.surfaceCount, 22);
+	EXPECT_EQ(rmesh.drawnMesh.surfaces.size(), 22);
 
 	// Test both the first and second index, if these pass the rest should be fine
 
 	// The first texture index usually contains the texture. Each "surface" is a section of the mesh that all uses the same texture
-	EXPECT_EQ(rmesh.drawnMesh.surfaces[0].textures[1].textureNameLength, 21);
+	EXPECT_EQ(rmesh.drawnMesh.surfaces[0].textures[1].textureName.size(), 21);
 	EXPECT_STREQ(rmesh.drawnMesh.surfaces[0].textures[1].textureName.data(), "containment_doors.jpg");
 
-	EXPECT_EQ(rmesh.drawnMesh.surfaces[0].vertexCount, 318);
-	EXPECT_EQ(rmesh.drawnMesh.surfaces[0].trianglesCount, 352);
+	EXPECT_EQ(rmesh.drawnMesh.surfaces[0].vertices.size(), 318);
+	EXPECT_EQ(rmesh.drawnMesh.surfaces[0].triangles.size(), 352);
 
-	EXPECT_EQ(rmesh.drawnMesh.surfaces[1].textures[1].textureNameLength, 9);
+	EXPECT_EQ(rmesh.drawnMesh.surfaces[1].textures[1].textureName.size(), 9);
 	EXPECT_STREQ(rmesh.drawnMesh.surfaces[1].textures[1].textureName.data(), "metal.jpg");
 
-	EXPECT_EQ(rmesh.drawnMesh.surfaces[1].vertexCount, 9994);
-	EXPECT_EQ(rmesh.drawnMesh.surfaces[1].trianglesCount, 5104);
+	EXPECT_EQ(rmesh.drawnMesh.surfaces[1].vertices.size(), 9994);
+	EXPECT_EQ(rmesh.drawnMesh.surfaces[1].triangles.size(), 5104);
 
 	// Test the collision model, if we got this passes then it's safe to assume the drawn mesh was read fine.
-	EXPECT_EQ(rmesh.collisionMesh.surfaceCount, 1);
-	EXPECT_EQ(rmesh.collisionMesh.surfaces[0].vertexCount, 18);
-	EXPECT_EQ(rmesh.collisionMesh.surfaces[0].trianglesCount, 8);
+	EXPECT_EQ(rmesh.collisionMesh.surfaces.size(), 1);
+	EXPECT_EQ(rmesh.collisionMesh.surfaces[0].vertices.size(), 18);
+	EXPECT_EQ(rmesh.collisionMesh.surfaces[0].triangles.size(), 8);
 }
 
 /** Reads an RMesh file from the SCP: NTF Mod. This file incorporates hasNoColl in the header. */

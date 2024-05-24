@@ -4,6 +4,7 @@
 
 #include <fstream>
 #include <iostream>
+#include <utility>
 
 bool RMesh::Read(const std::string& path)
 {
@@ -13,7 +14,7 @@ bool RMesh::Read(const std::string& path)
 		return false;
 	}
 
-	int length = file.tellg();
+	std::streamsize length = file.tellg();
 	std::vector<char> buffer(length);
 
 	file.seekg(0, std::ios::beg);
@@ -22,8 +23,7 @@ bool RMesh::Read(const std::string& path)
 
 	BufferStream stream(reinterpret_cast<std::byte*>(buffer.data()), buffer.size());
 
-	header.header_length = stream.read<std::uint32_t>();
-	header.header = stream.read_string(header.header_length, false);
+	stream.read(header.header, stream.read<std::uint32_t>(), false);
 
 	if (header.header.find("RoomMesh") == std::string::npos)
 	{
@@ -42,12 +42,11 @@ bool RMesh::Read(const std::string& path)
 
 	if (header.hasTriggerBox)
 	{
-		triggerBoxCount = stream.read<std::uint32_t>();
+		std::uint32_t triggerBoxCount = stream.read<std::uint32_t>();
 		for (int i = 0; i < triggerBoxCount; i++)
 		{
 			Mesh mesh = ReadCollisionMesh(stream);
-			mesh.nameLength = stream.read<std::uint32_t>();
-			mesh.name = stream.read_string(mesh.nameLength, false);
+			stream.read(mesh.name, stream.read<std::uint32_t>(), false);
 
 			triggerBoxes.push_back(mesh);
 		}
@@ -114,60 +113,51 @@ Mesh RMesh::ReadDrawnMesh(BufferStream& stream)
 {
 	Mesh mesh;
 
-	mesh.surfaceCount = stream.read<std::uint32_t>();
-
-	for (int i = 0; i < mesh.surfaceCount; i++)
+	std::uint32_t surfaceCount = stream.read<std::uint32_t>();
+	for (int i = 0; i < surfaceCount; i++)
 	{
-		Surface surf;
+		Surface& surf = mesh.surfaces.emplace_back();
 
 		// Read textures
-		for (int j = 0; j < 2; j++)
+		for (Texture& texture : surf.textures)
 		{
-			Texture texture;
-			texture.blendType = stream.read<std::byte>();
+			stream.read(texture.blendType);
 
 			if (texture.blendType != std::byte(0))
 			{
-				texture.textureNameLength = stream.read<std::uint32_t>();
-				texture.textureName = stream.read_string(texture.textureNameLength, false);
+				stream.read(texture.textureName, stream.read<std::uint32_t>(), false);
 			}
-
-			surf.textures[j] = texture;
 		}
 
-		surf.vertexCount = stream.read<std::uint32_t>();
-		for (int j = 0; j < surf.vertexCount; j++)
+		std::uint32_t vertexCount = stream.read<std::uint32_t>();
+		for (int j = 0; j < vertexCount; j++)
 		{
-			Vertex vert{};
+			Vertex& vert = surf.vertices.emplace_back();
+			stream
+				.read(vert.vertex.x)
+				.read(vert.vertex.y)
+				.read(vert.vertex.z)
 
-			vert.vertex.x = stream.read<float>();
-			vert.vertex.y = stream.read<float>();
-			vert.vertex.z = stream.read<float>();
+				.read(vert.uv.x)
+				.read(vert.uv.y)
 
-			vert.uv.x = stream.read<float>();
-			vert.uv.y = stream.read<float>();
+				.read(vert.unk1)
+				.read(vert.unk2)
 
-			vert.unk1 = stream.read<float>();
-			vert.unk2 = stream.read<float>();
-
-			vert.r = stream.read<std::byte>();
-			vert.g = stream.read<std::byte>();
-			vert.b = stream.read<std::byte>();
-
-			surf.vertices.push_back(vert);
+				.read(vert.r)
+				.read(vert.g)
+				.read(vert.b);
 		}
 
-		surf.trianglesCount = stream.read<std::uint32_t>();
-		for (int j = 0; j < surf.trianglesCount; j++)
+		std::uint32_t triangleCount = stream.read<std::uint32_t>();
+		for (int j = 0; j < triangleCount; j++)
 		{
-			Triangle triangle{};
-			triangle.index1 = stream.read<std::uint32_t>();
-			triangle.index2 = stream.read<std::uint32_t>();
-			triangle.index3 = stream.read<std::uint32_t>();
-			surf.triangles.push_back(triangle);
+			Triangle& triangle = surf.triangles.emplace_back();
+			stream
+				.read(triangle.index1)
+				.read(triangle.index2)
+				.read(triangle.index3);
 		}
-
-		mesh.surfaces.push_back(surf);
 	}
 
 	return mesh;
@@ -177,24 +167,23 @@ Mesh RMesh::ReadCollisionMesh(BufferStream& stream)
 {
 	Mesh mesh;
 
-	mesh.surfaceCount = stream.read<std::uint32_t>();
-
-	for (int i = 0; i < mesh.surfaceCount; i++)
+	std::uint32_t surfaceCount = stream.read<std::uint32_t>();
+	for (int i = 0; i < surfaceCount; i++)
 	{
-		Surface surf;
+		Surface& surf = mesh.surfaces.emplace_back();
 
-		surf.vertexCount = stream.read<std::uint32_t>();
-		for (int j = 0; j < surf.vertexCount; j++)
+		std::uint32_t vertexCount = stream.read<std::uint32_t>();
+		for (int j = 0; j < vertexCount; j++)
 		{
-			Vertex vert{};
-			vert.vertex.x = stream.read<float>();
-			vert.vertex.y = stream.read<float>();
-			vert.vertex.z = stream.read<float>();
-			surf.vertices.push_back(vert);
+			Vertex& vert = surf.vertices.emplace_back();
+			stream
+				.read(vert.vertex.x)
+				.read(vert.vertex.y)
+				.read(vert.vertex.z);
 		}
 
-		surf.trianglesCount = stream.read<std::uint32_t>();
-		for (int j = 0; j < surf.trianglesCount; j++)
+		std::uint32_t triangleCount = stream.read<std::uint32_t>();
+		for (int j = 0; j < triangleCount; j++)
 		{
 			Triangle triangle{};
 			triangle.index1 = stream.read<std::uint32_t>();
@@ -202,108 +191,99 @@ Mesh RMesh::ReadCollisionMesh(BufferStream& stream)
 			triangle.index3 = stream.read<std::uint32_t>();
 			surf.triangles.push_back(triangle);
 		}
-
-		mesh.surfaces.push_back(surf);
 	}
 
 	return mesh;
 }
 
-void Entity::Read(BufferStream stream, std::uint32_t _classNameLength, std::string _className)
+void Entity::Read(BufferStream& stream, std::string _className)
 {
-	classNameLength = _classNameLength;
-	className = _className;
+	className = std::move(_className);
 }
 
-void EntityScreen::Read(BufferStream stream, std::uint32_t _classNameLength, std::string _className)
+void EntityScreen::Read(BufferStream& stream, std::string _className)
 {
-	Entity::Read(stream, _classNameLength, _className);
+	Entity::Read(stream, std::move(_className));
+	stream
+		.read(position.x)
+		.read(position.y)
+		.read(position.z)
 
-	position.x = stream.read<float>();
-	position.y = stream.read<float>();
-	position.z = stream.read<float>();
-
-	imgPathLength = stream.read<std::uint32_t>();
-	imgPath = stream.read_string(imgPathLength, false);
+		.read(imgPath, stream.read<std::uint32_t>(), false);
 }
 
-void EntityWaypoint::Read(BufferStream stream, std::uint32_t _classNameLength, std::string _className)
+void EntityWaypoint::Read(BufferStream& stream, std::string _className)
 {
-	Entity::Read(stream, _classNameLength, _className);
-
-	position.x = stream.read<float>();
-	position.y = stream.read<float>();
-	position.z = stream.read<float>();
+	Entity::Read(stream, std::move(_className));
+	stream
+		.read(position.x)
+		.read(position.y)
+		.read(position.z);
 }
 
-void EntityLight::Read(BufferStream stream, std::uint32_t _classNameLength, std::string _className)
+void EntityLight::Read(BufferStream& stream, std::string _className)
 {
-	Entity::Read(stream, _classNameLength, _className);
+	Entity::Read(stream, _className);
+	stream
+		.read(position.x)
+		.read(position.y)
+		.read(position.z)
 
-	position.x = stream.read<float>();
-	position.y = stream.read<float>();
-	position.z = stream.read<float>();
+		.read(range)
 
-	range = stream.read<float>();
+		.read(color, stream.read<std::uint32_t>(), false)
 
-	colorLength = stream.read<std::uint32_t>();
-	color = stream.read_string(colorLength, false);
-
-	intensity = stream.read<float>();
+		.read(intensity);
 }
 
-void EntitySpotLight::Read(BufferStream stream, std::uint32_t _classNameLength, std::string _className)
+void EntitySpotLight::Read(BufferStream& stream, std::string _className)
 {
-	EntityLight::Read(stream, _classNameLength, _className);
+	EntityLight::Read(stream, _className);
+	stream
+		.read(angles, stream.read<std::uint32_t>(), false)
 
-	anglesLength = stream.read<std::uint32_t>();
-	angles = stream.read_string(anglesLength, false);
-
-	innerConeAngle = stream.read<std::uint32_t>();
-	outerConeAngle = stream.read<std::uint32_t>();
+		.read(innerConeAngle)
+		.read(outerConeAngle);
 }
 
-void EntitySoundEmitter::Read(BufferStream stream, std::uint32_t _classNameLength, std::string _className)
+void EntitySoundEmitter::Read(BufferStream& stream, std::string _className)
 {
-	Entity::Read(stream, _classNameLength, _className);
+	Entity::Read(stream, _className);
 
 	/// @todo Handle sound emitters, will need to look more into the SCP:CB code to
 	/// determine how to read these correctly. for now we will just skip over them
-	stream.read<float>();
-	stream.read<float>();
-	stream.read<float>();
-	stream.read<std::uint32_t>();
-	stream.read<float>();
+	stream
+		.skip<float>(3)
+		.skip<std::uint32_t>()
+		.skip<float>();
 }
 
-void EntityPlayerStart::Read(BufferStream stream, std::uint32_t _classNameLength, std::string _className)
+void EntityPlayerStart::Read(BufferStream& stream, std::string _className)
 {
-	Entity::Read(stream, _classNameLength, _className);
+	Entity::Read(stream, _className);
+	stream
+		.read(position.x)
+		.read(position.y)
+		.read(position.z)
 
-	position.x = stream.read<float>();
-	position.y = stream.read<float>();
-	position.z = stream.read<float>();
-
-	anglesLength = stream.read<std::uint32_t>();
-	angles = stream.read_string(anglesLength, false);
+		.read(angles, stream.read<std::uint32_t>(), false);
 }
 
-void EntityModel::Read(BufferStream stream, std::uint32_t _classNameLength, std::string _className)
+void EntityModel::Read(BufferStream& stream, std::string _className)
 {
-	Entity::Read(stream, _classNameLength, _className);
+	Entity::Read(stream, _className);
+	stream
+		.read(path, stream.read<std::uint32_t>(), false)
 
-	pathLength = stream.read<std::uint32_t>();
-	path = stream.read_string(pathLength, false);
+		.read(position.x)
+		.read(position.y)
+		.read(position.z)
 
-	position.x = stream.read<float>();
-	position.y = stream.read<float>();
-	position.z = stream.read<float>();
+		.read(rotation.x)
+		.read(rotation.y)
+		.read(rotation.z)
 
-	rotation.x = stream.read<float>();
-	rotation.y = stream.read<float>();
-	rotation.z = stream.read<float>();
-
-	scale.x = stream.read<float>();
-	scale.y = stream.read<float>();
-	scale.z = stream.read<float>();
+		.read(scale.x)
+		.read(scale.y)
+		.read(scale.z);
 }
