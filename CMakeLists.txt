@@ -38,6 +38,6 @@ if(BUILD_TESTS)
     )
     target_link_libraries(${PROJECT_NAME}Test PUBLIC ${PROJECT_NAME} gtest_main)
 
-	#include(GoogleTest)
-	#gtest_discover_tests(${PROJECT_NAME}Test)
+	include(GoogleTest)
+	gtest_discover_tests(${PROJECT_NAME}Test)
 endif()
