@@ -72,6 +72,8 @@ struct Entity
 	Vector3 rotation;
 	Vector3 scale;
 
+	virtual ~Entity() = default;
+
 	virtual void Read(BufferStream& stream, std::string _className);
 };
 
