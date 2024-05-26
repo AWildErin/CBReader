@@ -43,7 +43,7 @@ bool RMesh::Read(const std::string& path)
 	if (header.hasTriggerBox)
 	{
 		std::uint32_t triggerBoxCount = stream.read<std::uint32_t>();
-		for (int i = 0; i < triggerBoxCount; i++)
+		for (std::uint32_t i = 0; i < triggerBoxCount; i++)
 		{
 			Mesh mesh = ReadCollisionMesh(stream);
 			stream.read(mesh.name, stream.read<std::uint32_t>(), false);
@@ -53,7 +53,7 @@ bool RMesh::Read(const std::string& path)
 	}
 
 	std::uint32_t entityCount = stream.read<std::uint32_t>();
-	for (int i = 0; i < entityCount; i++)
+	for (std::uint32_t i = 0; i < entityCount; i++)
 	{
 		std::string className = stream.read_string(stream.read<std::uint32_t>(), false);
 
@@ -109,7 +109,7 @@ Mesh RMesh::ReadDrawnMesh(BufferStream& stream)
 	Mesh mesh;
 
 	std::uint32_t surfaceCount = stream.read<std::uint32_t>();
-	for (int i = 0; i < surfaceCount; i++)
+	for (std::uint32_t i = 0; i < surfaceCount; i++)
 	{
 		Surface& surf = mesh.surfaces.emplace_back();
 
@@ -125,7 +125,7 @@ Mesh RMesh::ReadDrawnMesh(BufferStream& stream)
 		}
 
 		std::uint32_t vertexCount = stream.read<std::uint32_t>();
-		for (int j = 0; j < vertexCount; j++)
+		for (std::uint32_t j = 0; j < vertexCount; j++)
 		{
 			Vertex& vert = surf.vertices.emplace_back();
 			stream
@@ -145,7 +145,7 @@ Mesh RMesh::ReadDrawnMesh(BufferStream& stream)
 		}
 
 		std::uint32_t triangleCount = stream.read<std::uint32_t>();
-		for (int j = 0; j < triangleCount; j++)
+		for (std::uint32_t j = 0; j < triangleCount; j++)
 		{
 			Triangle& triangle = surf.triangles.emplace_back();
 			stream
@@ -163,12 +163,12 @@ Mesh RMesh::ReadCollisionMesh(BufferStream& stream)
 	Mesh mesh;
 
 	std::uint32_t surfaceCount = stream.read<std::uint32_t>();
-	for (int i = 0; i < surfaceCount; i++)
+	for (std::uint32_t i = 0; i < surfaceCount; i++)
 	{
 		Surface& surf = mesh.surfaces.emplace_back();
 
 		std::uint32_t vertexCount = stream.read<std::uint32_t>();
-		for (int j = 0; j < vertexCount; j++)
+		for (std::uint32_t j = 0; j < vertexCount; j++)
 		{
 			Vertex& vert = surf.vertices.emplace_back();
 			stream
@@ -178,7 +178,7 @@ Mesh RMesh::ReadCollisionMesh(BufferStream& stream)
 		}
 
 		std::uint32_t triangleCount = stream.read<std::uint32_t>();
-		for (int j = 0; j < triangleCount; j++)
+		for (std::uint32_t j = 0; j < triangleCount; j++)
 		{
 			Triangle triangle{};
 			triangle.index1 = stream.read<std::uint32_t>();
