@@ -8,7 +8,7 @@ TEST(RMesh, read_triggerboxes)
 {
 	std::string path = RESOURCES_ROOT_PATH "/173_opt.rmesh";
 
-	RMesh rmesh;
+	rmesh::RMesh rmesh;
 
 	// Check if the RMesh file loaded
 	EXPECT_TRUE(rmesh.Read(path));

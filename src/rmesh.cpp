@@ -6,6 +6,8 @@
 #include <iostream>
 #include <utility>
 
+using namespace rmesh;
+
 bool RMesh::Read(const std::string& path)
 {
 	std::ifstream file(path, std::ios::binary | std::ios::ate);
