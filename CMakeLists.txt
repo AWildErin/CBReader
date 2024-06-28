@@ -11,6 +11,9 @@ set(CBREADER_SRC
 
 	${CMAKE_CURRENT_LIST_DIR}/include/cbreader/rmesh.h
 	${CMAKE_CURRENT_LIST_DIR}/src/rmesh.cpp
+
+	${CMAKE_CURRENT_LIST_DIR}/include/cbreader/b3d.h
+	${CMAKE_CURRENT_LIST_DIR}/src/b3d.cpp
 )
 
 add_library(${PROJECT_NAME} STATIC ${CBREADER_SRC})
