@@ -37,6 +37,7 @@ if(BUILD_TESTS)
 
     add_executable(${PROJECT_NAME}Test 
         "${CMAKE_CURRENT_LIST_DIR}/test/test_rmesh.cpp"
+        "${CMAKE_CURRENT_LIST_DIR}/test/test_b3d.cpp"
         "${CMAKE_CURRENT_LIST_DIR}/test/main.cpp"
     )
     target_link_libraries(${PROJECT_NAME}Test PUBLIC ${PROJECT_NAME} gtest_main)
