@@ -87,10 +87,6 @@ bool b3d::B3DModel::Read(const std::string& path)
 	return true;
 }
 
-b3d::B3DChunk::B3DChunk(B3DModel& model) : model(model)
-{
-}
-
 void b3d::B3DChunk::Read(BufferStream& stream)
 {
 	stream.read(name, 4);
@@ -206,7 +202,7 @@ void b3d::NODEChunk::Process(BufferStream& stream)
 			_bone.Read(stream);
 			_bone.Process(stream);
 
-			bone = bone;
+			bone = _bone;
 			break;
 		}
 		case 'KEYS':
@@ -242,7 +238,7 @@ void b3d::NODEChunk::Process(BufferStream& stream)
 			chunk.Read(stream);
 			stream.seek(chunk.position + chunk.length, std::ios::beg);
 
-			__debugbreak();
+//			__debugbreak();
 			break;
 		}
 		}
@@ -282,7 +278,7 @@ void b3d::MESHChunk::Process(BufferStream& stream)
 		}
 		default:
 		{
-			__debugbreak();
+//			__debugbreak();
 		}
 		}
 	}
