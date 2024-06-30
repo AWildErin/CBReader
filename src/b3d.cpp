@@ -339,7 +339,7 @@ void b3d::TRISChunk::Process(BufferStream& stream)
 
 	while (stream.tell() < position + length)
 	{
-		Triangle tri;
+		cbtypes::Triangle tri;
 		stream
 			.read(tri.index1)
 			.read(tri.index2)
