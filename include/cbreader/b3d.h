@@ -233,9 +233,13 @@ namespace b3d
 
 		B3DChunk rootChunk;
 
+		/** @todo is there actually multiple texs chunks? */
 		std::vector<TEXSChunk> texsChunks;
+		/** @todo is there actually multiple brus chunks? */
 		std::vector<BRUSChunk> brusChunks;
-		std::vector<NODEChunk> nodeChunks;
+
+		// only 1 root node
+		NODEChunk rootNode;
 
 		std::vector<B3DChunk> unknownChunks;
 

@@ -78,7 +78,7 @@ bool b3d::B3DModel::Read(const std::string& path)
 			node.Read(stream);
 			node.Process(stream);
 
-			nodeChunks.push_back(node);
+			rootNode = node;
 			break;
 		}
 		}
