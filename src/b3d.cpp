@@ -173,10 +173,10 @@ void b3d::NODEChunk::Process(BufferStream& stream)
 		.read(nodeData.scale.y)
 		.read(nodeData.scale.z)
 
-		.read(nodeData.rotation.x)
-		.read(nodeData.rotation.y)
+		.read(nodeData.rotation.w)
 		.read(nodeData.rotation.z)
-		.read(nodeData.rotation.w);
+		.read(nodeData.rotation.y)
+		.read(nodeData.rotation.x);
 
 	while (stream.tell() < position + length)
 	{

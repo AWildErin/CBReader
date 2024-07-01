@@ -213,6 +213,8 @@ namespace b3d
 			std::string name;
 			cbtypes::Vector3 position;
 			cbtypes::Vector3 scale;
+
+			/** @note this quaternion is rotated in the format of WZYX*/
 			cbtypes::Quaternion rotation;
 		};
 
