@@ -95,6 +95,8 @@ namespace b3d
 			float shininess;
 			std::uint32_t blend;
 			std::uint32_t fx;
+
+			/** @todo is there actually multiple texture ids per brush data */
 			std::vector<std::uint32_t> textureIds;
 
 		};
@@ -110,6 +112,7 @@ namespace b3d
 	{
 		std::uint32_t brushId = 0;
 
+		/** @todo is there actually multiple vrts chunks per mesh? */
 		std::vector<VRTSChunk> vrtsChunks;
 		std::vector<TRISChunk> trisChunks;
 
@@ -195,7 +198,6 @@ namespace b3d
 
 	struct ANIMChunk : public B3DChunk
 	{
-		/** This isn't used anymore but it's kept for parity */
 		std::uint32_t flags = 0;
 
 		std::uint32_t frames = 0;
@@ -223,6 +225,9 @@ namespace b3d
 		std::vector<KEYSChunk> animKeys;
 		std::vector<ANIMChunk> animations;
 		std::vector<NODEChunk> childNodes;
+
+		bool hasBone = false;
+		bool hasMesh = false;
 
 		virtual void Process(BufferStream& stream) override;
 	};

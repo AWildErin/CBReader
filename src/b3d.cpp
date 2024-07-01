@@ -193,6 +193,7 @@ void b3d::NODEChunk::Process(BufferStream& stream)
 			mesh.Read(stream);
 			mesh.Process(stream);
 
+			hasMesh = true;
 			meshes.push_back(mesh);
 			break;
 		}
@@ -202,6 +203,7 @@ void b3d::NODEChunk::Process(BufferStream& stream)
 			_bone.Read(stream);
 			_bone.Process(stream);
 
+			hasBone = true;
 			bone = _bone;
 			break;
 		}
@@ -391,6 +393,7 @@ void b3d::KEYSChunk::Process(BufferStream& stream)
 
 		if (flags & KeyFlags::HasRotation)
 		{
+			// @todo This may be inverted
 			stream
 				.read(sub.rotation.w)
 				.read(sub.rotation.x)
