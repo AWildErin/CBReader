@@ -230,6 +230,8 @@ namespace b3d
 
 		bool hasBone = false;
 		bool hasMesh = false;
+		bool hasAnims = false;
+		bool hasKeys = false;
 
 		virtual void Process(BufferStream& stream) override;
 	};
