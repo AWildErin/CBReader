@@ -213,6 +213,7 @@ void b3d::NODEChunk::Process(BufferStream& stream)
 			keys.Read(stream);
 			keys.Process(stream);
 
+			hasKeys = true;
 			animKeys.push_back(keys);
 			break;
 		}
@@ -222,8 +223,8 @@ void b3d::NODEChunk::Process(BufferStream& stream)
 			anim.Read(stream);
 			anim.Process(stream);
 
+			hasAnims = true;
 			animations.push_back(anim);
-
 			break;
 		}
 		case 'NODE':
@@ -239,8 +240,6 @@ void b3d::NODEChunk::Process(BufferStream& stream)
 			B3DChunk chunk;
 			chunk.Read(stream);
 			stream.seek(chunk.position + chunk.length, std::ios::beg);
-
-//			__debugbreak();
 			break;
 		}
 		}
@@ -280,7 +279,7 @@ void b3d::MESHChunk::Process(BufferStream& stream)
 		}
 		default:
 		{
-//			__debugbreak();
+			break;
 		}
 		}
 	}
