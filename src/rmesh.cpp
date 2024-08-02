@@ -149,7 +149,7 @@ Mesh RMesh::ReadDrawnMesh(BufferStream& stream)
 		std::uint32_t triangleCount = stream.read<std::uint32_t>();
 		for (std::uint32_t j = 0; j < triangleCount; j++)
 		{
-			Triangle& triangle = surf.triangles.emplace_back();
+			cbtypes::Triangle& triangle = surf.triangles.emplace_back();
 			stream
 				.read(triangle.index1)
 				.read(triangle.index2)
@@ -182,7 +182,7 @@ Mesh RMesh::ReadCollisionMesh(BufferStream& stream)
 		std::uint32_t triangleCount = stream.read<std::uint32_t>();
 		for (std::uint32_t j = 0; j < triangleCount; j++)
 		{
-			Triangle triangle{};
+			cbtypes::Triangle triangle{};
 			triangle.index1 = stream.read<std::uint32_t>();
 			triangle.index2 = stream.read<std::uint32_t>();
 			triangle.index3 = stream.read<std::uint32_t>();
