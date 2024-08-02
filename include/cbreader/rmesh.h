@@ -33,8 +33,8 @@ namespace rmesh
 
 	struct Vertex
 	{
-		Vector3 vertex;
-		Vector2 uv;
+		cbtypes::Vector3 vertex;
+		cbtypes::Vector2 uv;
 
 		float unk1{};
 		float unk2{};
@@ -50,7 +50,7 @@ namespace rmesh
 
 		std::vector<Vertex> vertices;
 
-		std::vector<Triangle> triangles;
+		std::vector<cbtypes::Triangle> triangles;
 	};
 
 	/**
@@ -76,9 +76,9 @@ namespace rmesh
 		std::string className;
 
 		/** This is read per entity. It would be ideal to read it in Entity, but EntityModel is special in that it has the model file name THEN the position. */
-		Vector3 position;
-		Vector3 rotation;
-		Vector3 scale;
+		cbtypes::Vector3 position;
+		cbtypes::Vector3 rotation;
+		cbtypes::Vector3 scale;
 
 		virtual ~Entity() = default;
 
