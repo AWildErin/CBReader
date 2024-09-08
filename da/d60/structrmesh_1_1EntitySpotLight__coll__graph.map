@@ -1,0 +1,8 @@
+<map id="rmesh::EntitySpotLight" name="rmesh::EntitySpotLight">
+<area shape="rect" id="node1" title=" " alt="" coords="5,375,176,400"/>
+<area shape="rect" id="node2" href="$d5/d16/structrmesh_1_1EntityLight.html" title=" " alt="" coords="112,300,253,325"/>
+<area shape="rect" id="node3" href="$d9/d5f/structrmesh_1_1Entity.html" title="Root entity class embedded in RMesh files." alt="" coords="204,212,313,237"/>
+<area shape="rect" id="node4" title=" " alt="" coords="99,95,186,120"/>
+<area shape="rect" id="node5" title=" " alt="" coords="73,5,212,45"/>
+<area shape="rect" id="node6" href="$de/d03/structcbtypes_1_1Vector3.html" title=" " alt="" coords="229,95,360,120"/>
+</map>

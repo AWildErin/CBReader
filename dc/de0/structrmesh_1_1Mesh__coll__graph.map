@@ -1,0 +1,14 @@
+<map id="rmesh::Mesh" name="rmesh::Mesh">
+<area shape="rect" id="node1" title="A collection of surfaces that make up the visual and collision mesh for RMesh." alt="" coords="8,489,115,515"/>
+<area shape="rect" id="node2" title=" " alt="" coords="84,387,231,427"/>
+<area shape="rect" id="node3" href="$d3/d08/structrmesh_1_1Surface.html" title=" " alt="" coords="136,299,256,324"/>
+<area shape="rect" id="node4" href="$d0/d9e/structrmesh_1_1Texture.html" title=" " alt="" coords="78,203,197,229"/>
+<area shape="rect" id="node5" title=" " alt="" coords="31,108,118,133"/>
+<area shape="rect" id="node6" title=" " alt="" coords="5,5,144,45"/>
+<area shape="rect" id="node7" title=" " alt="" coords="221,196,368,236"/>
+<area shape="rect" id="node8" href="$d6/de1/structrmesh_1_1Vertex.html" title=" " alt="" coords="238,108,351,133"/>
+<area shape="rect" id="node9" href="$de/d03/structcbtypes_1_1Vector3.html" title=" " alt="" coords="199,13,329,38"/>
+<area shape="rect" id="node10" href="$da/de9/structcbtypes_1_1Vector2.html" title=" " alt="" coords="353,13,484,38"/>
+<area shape="rect" id="node11" title=" " alt="" coords="392,196,549,236"/>
+<area shape="rect" id="node12" href="$de/dab/structcbtypes_1_1Triangle.html" title=" " alt="" coords="405,108,537,133"/>
+</map>

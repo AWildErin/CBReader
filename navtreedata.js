@@ -25,7 +25,37 @@
 var NAVTREE =
 [
   [ "CBReader", "index.html", [
-    [ "test", "de/d85/md_docs_pages_test.html", null ],
+    [ "CBReader", "d0/d30/md_README.html", [
+      [ "Building", "d0/d30/md_README.html#autotoc_md1", [
+        [ "Requirements", "d0/d30/md_README.html#autotoc_md2", null ],
+        [ "Steps", "d0/d30/md_README.html#autotoc_md3", null ]
+      ] ],
+      [ "Usage", "d0/d30/md_README.html#autotoc_md4", null ]
+    ] ],
+    [ "RMesh Structure", "d8/def/md_docs_pages_RMesh_Structure.html", [
+      [ "Structure", "d8/def/md_docs_pages_RMesh_Structure.html#autotoc_md6", [
+        [ "Types", "d8/def/md_docs_pages_RMesh_Structure.html#autotoc_md7", [
+          [ "Vertex", "d8/def/md_docs_pages_RMesh_Structure.html#autotoc_md8", null ]
+        ] ],
+        [ "Triangle", "d8/def/md_docs_pages_RMesh_Structure.html#autotoc_md9", [
+          [ "Surface", "d8/def/md_docs_pages_RMesh_Structure.html#autotoc_md10", null ]
+        ] ],
+        [ "Texture", "d8/def/md_docs_pages_RMesh_Structure.html#autotoc_md11", null ],
+        [ "Header", "d8/def/md_docs_pages_RMesh_Structure.html#autotoc_md12", null ],
+        [ "Drawn Mesh", "d8/def/md_docs_pages_RMesh_Structure.html#autotoc_md13", null ],
+        [ "Collision Mesh", "d8/def/md_docs_pages_RMesh_Structure.html#autotoc_md14", null ],
+        [ "Trigger boxes", "d8/def/md_docs_pages_RMesh_Structure.html#autotoc_md15", null ],
+        [ "Entities", "d8/def/md_docs_pages_RMesh_Structure.html#autotoc_md16", [
+          [ "Screen", "d8/def/md_docs_pages_RMesh_Structure.html#autotoc_md17", null ],
+          [ "Waypoint", "d8/def/md_docs_pages_RMesh_Structure.html#autotoc_md18", null ],
+          [ "Light", "d8/def/md_docs_pages_RMesh_Structure.html#autotoc_md19", null ],
+          [ "Spotlight", "d8/def/md_docs_pages_RMesh_Structure.html#autotoc_md20", null ],
+          [ "Sound Emitter", "d8/def/md_docs_pages_RMesh_Structure.html#autotoc_md21", null ],
+          [ "Player start", "d8/def/md_docs_pages_RMesh_Structure.html#autotoc_md22", null ],
+          [ "Model", "d8/def/md_docs_pages_RMesh_Structure.html#autotoc_md23", null ]
+        ] ]
+      ] ]
+    ] ],
     [ "Todo List", "dd/da0/todo.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],

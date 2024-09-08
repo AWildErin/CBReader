@@ -1,0 +1,12 @@
+<map id="rmesh::Surface" name="rmesh::Surface">
+<area shape="rect" id="node1" title=" " alt="" coords="172,299,292,324"/>
+<area shape="rect" id="node2" href="$d0/d9e/structrmesh_1_1Texture.html" title=" " alt="" coords="15,203,134,229"/>
+<area shape="rect" id="node3" title=" " alt="" coords="31,108,118,133"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,5,144,45"/>
+<area shape="rect" id="node5" title=" " alt="" coords="159,196,305,236"/>
+<area shape="rect" id="node6" href="$d6/de1/structrmesh_1_1Vertex.html" title=" " alt="" coords="177,108,290,133"/>
+<area shape="rect" id="node7" href="$de/d03/structcbtypes_1_1Vector3.html" title=" " alt="" coords="168,13,299,38"/>
+<area shape="rect" id="node8" href="$da/de9/structcbtypes_1_1Vector2.html" title=" " alt="" coords="323,13,453,38"/>
+<area shape="rect" id="node9" title=" " alt="" coords="329,196,487,236"/>
+<area shape="rect" id="node10" href="$de/dab/structcbtypes_1_1Triangle.html" title=" " alt="" coords="342,108,474,133"/>
+</map>
