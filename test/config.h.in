@@ -1,3 +1,0 @@
-#pragma once
-
-#define RESOURCES_ROOT_PATH "${TEST_RESOURCES_ROOT_PATH}"
