@@ -138,8 +138,8 @@ Mesh RMesh::ReadDrawnMesh(BufferStream& stream)
 				.read(vert.uv.x)
 				.read(vert.uv.y)
 
-				.read(vert.unk1)
-				.read(vert.unk2)
+				.read(vert.lightmapUV.x)
+				.read(vert.lightmapUV.y)
 
 				.read(vert.r)
 				.read(vert.g)

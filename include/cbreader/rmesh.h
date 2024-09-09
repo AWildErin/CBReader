@@ -35,9 +35,8 @@ namespace rmesh
 	{
 		cbtypes::Vector3 vertex;
 		cbtypes::Vector2 uv;
-
-		float unk1{};
-		float unk2{};
+		
+		cbtypes::Vector2 lightmapUV;
 
 		std::byte r{};
 		std::byte g{};
