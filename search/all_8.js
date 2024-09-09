@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['lightentities_0',['lightEntities',['../df/d1e/structrmesh_1_1RMesh.html#ad46e6b62807f213710740612fabe1b81',1,'rmesh::RMesh']]]
+  ['lightentities_0',['lightEntities',['../df/d1e/structrmesh_1_1RMesh.html#ad46e6b62807f213710740612fabe1b81',1,'rmesh::RMesh']]],
+  ['lightmapuv_1',['lightmapUV',['../d6/de1/structrmesh_1_1Vertex.html#ae2a1e334d447c44b63b56a7427a4f7d5',1,'rmesh::Vertex']]]
 ];
