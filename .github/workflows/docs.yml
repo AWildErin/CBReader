@@ -2,7 +2,7 @@ name: Deploy Docs
 
 on:
   push:
-    branches: [feat/docs]
+    branches: [main]
 
 jobs:
   deploy:
