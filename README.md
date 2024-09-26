@@ -5,7 +5,7 @@ Current Support:
 | Mesh    | Reader | Writing |
 |---------|--------|---------|
 | RMesh   | ✔     | ❌      |
-| B3D     | ❌    | ❌      |
+| B3D     | ✔     | ❌      |
 | RMesh2  | ❌    | ❌      |
 | DirectX | ❌    | ❌      |
 

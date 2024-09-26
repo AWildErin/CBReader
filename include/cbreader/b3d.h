@@ -22,21 +22,6 @@ namespace b3d
 	struct VRTSChunk;
 	struct TRISChunk;
 
-	/** Enum with values corrisponding to their FourCC values */
-	enum B3DChunkType
-	{
-		BB3D = 1111634756,
-		TEXS = 1413830739,
-		BRUS = 1112692051,
-		NODE = 1313817669,
-		MESH = 1296388936,
-		VRTS = 1448236115,
-		TRIS = 1414678867,
-		BONE = 1112493637,
-		KEYS = 1262836051,
-		ANIM = 1095649613,
-	};
-
 	/**
 	* Takes a string and returns a FourCC based on the first 4 characters.
 	* 
