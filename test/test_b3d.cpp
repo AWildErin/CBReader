@@ -15,7 +15,5 @@ TEST(B3D, read_staticmesh)
 	// Check for the only texture in this TEXS block (yes, this is the actual path for some reason)
 	EXPECT_STREQ(model.texsChunks[0].textures[0].name.data(), "D:\\SCP - CB - Vanilla\\GFX\\npcs\\173texture.jpg");
 
-	EXPECT_STREQ(model.nodeChunks[0].nodeData.name.data(), "Scene_Root");
-
-	__debugbreak();
+	EXPECT_STREQ(model.rootNode.nodeData.name.data(), "Scene_Root");
 }
