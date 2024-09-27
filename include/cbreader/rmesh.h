@@ -2,6 +2,7 @@
 
 #include "cbreader/types.h"
 
+#include <array>
 #include <vector>
 #include <string>
 
@@ -45,7 +46,7 @@ namespace rmesh
 
 	struct Surface
 	{
-		Texture textures[2];
+		std::array<Texture, 2> textures;
 
 		std::vector<Vertex> vertices;
 
