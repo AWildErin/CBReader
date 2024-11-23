@@ -26,4 +26,4 @@ This project is designed to be added as submodule. When adding please keep in mi
     `target_link_libraries(${PROJECT_NAME} PRIVATE CBReader)`
 
 ## Usage
-Usage can be found on the docs (SOON)
+Usage can be found on the docs [here](https://awilderin.github.io/CBReader/)
