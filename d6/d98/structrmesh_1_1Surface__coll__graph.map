@@ -1,12 +1,13 @@
 <map id="rmesh::Surface" name="rmesh::Surface">
-<area shape="rect" id="node1" title=" " alt="" coords="172,313,292,339"/>
-<area shape="rect" id="node2" href="$d0/d9e/structrmesh_1_1Texture.html" title=" " alt="" coords="15,218,134,243"/>
-<area shape="rect" id="node3" title=" " alt="" coords="31,123,118,148"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,5,144,45"/>
-<area shape="rect" id="node5" title=" " alt="" coords="159,211,305,251"/>
-<area shape="rect" id="node6" href="$d6/de1/structrmesh_1_1Vertex.html" title=" " alt="" coords="177,123,290,148"/>
-<area shape="rect" id="node7" href="$de/d03/structcbtypes_1_1Vector3.html" title=" " alt="" coords="168,13,299,38"/>
-<area shape="rect" id="node8" href="$da/de9/structcbtypes_1_1Vector2.html" title=" " alt="" coords="323,13,453,38"/>
-<area shape="rect" id="node9" title=" " alt="" coords="329,211,487,251"/>
-<area shape="rect" id="node10" href="$de/dab/structcbtypes_1_1Triangle.html" title=" " alt="" coords="342,123,474,148"/>
+<area shape="rect" id="node1" title=" " alt="" coords="975,77,1095,102"/>
+<area shape="rect" id="node2" title=" " alt="" coords="713,5,861,45"/>
+<area shape="rect" id="node3" href="$d0/d9e/structrmesh_1_1Texture.html" title=" " alt="" coords="469,13,588,38"/>
+<area shape="rect" id="node4" title=" " alt="" coords="215,13,302,38"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,5,144,45"/>
+<area shape="rect" id="node6" title=" " alt="" coords="713,69,860,109"/>
+<area shape="rect" id="node7" href="$d6/de1/structrmesh_1_1Vertex.html" title=" " alt="" coords="472,77,585,102"/>
+<area shape="rect" id="node8" href="$de/d03/structcbtypes_1_1Vector3.html" title=" " alt="" coords="193,70,324,95"/>
+<area shape="rect" id="node9" href="$da/de9/structcbtypes_1_1Vector2.html" title=" " alt="" coords="193,130,324,155"/>
+<area shape="rect" id="node10" title=" " alt="" coords="708,133,865,173"/>
+<area shape="rect" id="node11" href="$de/dab/structcbtypes_1_1Triangle.html" title=" " alt="" coords="463,141,595,166"/>
 </map>
