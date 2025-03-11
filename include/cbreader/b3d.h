@@ -22,6 +22,20 @@ namespace b3d
 	struct VRTSChunk;
 	struct TRISChunk;
 
+	enum B3DChunkIds : std::uint32_t
+	{
+		BB3D = 0x42423344,
+		TEXS = 0x54455853,
+		BRUS = 0x42525553,
+		NODE = 0x4E4F4445,
+		MESH = 0x4D455348,
+		BONE = 0x424F4E45,
+		KEYS = 0x4B455953,
+		ANIM = 0x414E494D,
+		VRTS = 0x56525453,
+		TRIS = 0x54524953
+	};
+
 	/**
 	* Takes a string and returns a FourCC based on the first 4 characters.
 	* 

@@ -32,7 +32,7 @@ bool b3d::B3DModel::Read(const std::string& path)
 
 	rootChunk.Read(stream);
 
-	if (FourCC(rootChunk.name) != 'BB3D')
+	if (FourCC(rootChunk.name) != B3DChunkIds::BB3D)
 	{
 		return false;
 	}
@@ -54,7 +54,7 @@ bool b3d::B3DModel::Read(const std::string& path)
 
 		switch (FourCC(tag))
 		{
-		case 'TEXS':
+		case B3DChunkIds::TEXS:
 		{
 			TEXSChunk texs;
 			texs.Read(stream);
@@ -63,7 +63,7 @@ bool b3d::B3DModel::Read(const std::string& path)
 			texsChunks.push_back(texs);
 			break;
 		}
-		case 'BRUS':
+		case B3DChunkIds::BRUS:
 		{
 			BRUSChunk brus;
 			brus.Read(stream);
@@ -72,7 +72,7 @@ bool b3d::B3DModel::Read(const std::string& path)
 			brusChunks.push_back(brus);
 			break;
 		}
-		case 'NODE':
+		case B3DChunkIds::NODE:
 		{
 			NODEChunk node;
 			node.Read(stream);
@@ -187,7 +187,7 @@ void b3d::NODEChunk::Process(BufferStream& stream)
 
 		switch (FourCC(tag))
 		{
-		case 'MESH':
+		case B3DChunkIds::MESH:
 		{
 			MESHChunk mesh;
 			mesh.Read(stream);
@@ -197,7 +197,7 @@ void b3d::NODEChunk::Process(BufferStream& stream)
 			meshes.push_back(mesh);
 			break;
 		}
-		case 'BONE':
+		case B3DChunkIds::BONE:
 		{
 			BONEChunk _bone;
 			_bone.Read(stream);
@@ -207,7 +207,7 @@ void b3d::NODEChunk::Process(BufferStream& stream)
 			bone = _bone;
 			break;
 		}
-		case 'KEYS':
+		case B3DChunkIds::KEYS:
 		{
 			KEYSChunk keys;
 			keys.Read(stream);
@@ -217,7 +217,7 @@ void b3d::NODEChunk::Process(BufferStream& stream)
 			animKeys.push_back(keys);
 			break;
 		}
-		case 'ANIM':
+		case B3DChunkIds::ANIM:
 		{
 			ANIMChunk anim;
 			anim.Read(stream);
@@ -227,7 +227,7 @@ void b3d::NODEChunk::Process(BufferStream& stream)
 			animations.push_back(anim);
 			break;
 		}
-		case 'NODE':
+		case B3DChunkIds::NODE:
 		{
 			NODEChunk node;
 			node.Read(stream);
@@ -259,7 +259,7 @@ void b3d::MESHChunk::Process(BufferStream& stream)
 
 		switch (FourCC(tag))
 		{
-		case 'VRTS':
+		case B3DChunkIds::VRTS:
 		{
 			VRTSChunk vrts;
 			vrts.Read(stream);
@@ -268,7 +268,7 @@ void b3d::MESHChunk::Process(BufferStream& stream)
 			vrtsChunks.push_back(vrts);
 			break;
 		}
-		case 'TRIS':
+		case B3DChunkIds::TRIS:
 		{
 			TRISChunk tris;
 			tris.Read(stream);
