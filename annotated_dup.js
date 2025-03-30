@@ -1,6 +1,21 @@
 var annotated_dup =
 [
+    [ "b3d", "d1/d9c/namespaceb3d.html", [
+      [ "ANIMChunk", "d5/d71/structb3d_1_1ANIMChunk.html", "d5/d71/structb3d_1_1ANIMChunk" ],
+      [ "B3DChunk", "d3/da7/structb3d_1_1B3DChunk.html", "d3/da7/structb3d_1_1B3DChunk" ],
+      [ "B3DModel", "de/d91/structb3d_1_1B3DModel.html", "de/d91/structb3d_1_1B3DModel" ],
+      [ "BONEChunk", "dd/d16/structb3d_1_1BONEChunk.html", "dd/d16/structb3d_1_1BONEChunk" ],
+      [ "BRUSChunk", "db/d83/structb3d_1_1BRUSChunk.html", "db/d83/structb3d_1_1BRUSChunk" ],
+      [ "KEYSChunk", "d0/d86/structb3d_1_1KEYSChunk.html", "d0/d86/structb3d_1_1KEYSChunk" ],
+      [ "MESHChunk", "de/dd4/structb3d_1_1MESHChunk.html", "de/dd4/structb3d_1_1MESHChunk" ],
+      [ "NODEChunk", "d1/dc1/structb3d_1_1NODEChunk.html", "d1/dc1/structb3d_1_1NODEChunk" ],
+      [ "TEXSChunk", "dd/d4b/structb3d_1_1TEXSChunk.html", "dd/d4b/structb3d_1_1TEXSChunk" ],
+      [ "TRISChunk", "d9/dbe/structb3d_1_1TRISChunk.html", "d9/dbe/structb3d_1_1TRISChunk" ],
+      [ "VRTSChunk", "d9/d18/structb3d_1_1VRTSChunk.html", "d9/d18/structb3d_1_1VRTSChunk" ]
+    ] ],
     [ "cbtypes", "d3/d06/namespacecbtypes.html", [
+      [ "Color", "d2/d16/structcbtypes_1_1Color.html", "d2/d16/structcbtypes_1_1Color" ],
+      [ "Quaternion", "d3/db5/structcbtypes_1_1Quaternion.html", "d3/db5/structcbtypes_1_1Quaternion" ],
       [ "Triangle", "de/dab/structcbtypes_1_1Triangle.html", "de/dab/structcbtypes_1_1Triangle" ],
       [ "Vector2", "da/de9/structcbtypes_1_1Vector2.html", "da/de9/structcbtypes_1_1Vector2" ],
       [ "Vector3", "de/d03/structcbtypes_1_1Vector3.html", "de/d03/structcbtypes_1_1Vector3" ]

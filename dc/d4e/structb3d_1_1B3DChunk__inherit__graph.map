@@ -1,0 +1,12 @@
+<map id="b3d::B3DChunk" name="b3d::B3DChunk">
+<area shape="rect" id="node1" title=" " alt="" coords="5,203,128,228"/>
+<area shape="rect" id="node2" href="$d5/d71/structb3d_1_1ANIMChunk.html" title=" " alt="" coords="177,5,308,31"/>
+<area shape="rect" id="node3" href="$dd/d16/structb3d_1_1BONEChunk.html" title=" " alt="" coords="177,55,309,80"/>
+<area shape="rect" id="node4" href="$db/d83/structb3d_1_1BRUSChunk.html" title=" " alt="" coords="177,104,308,129"/>
+<area shape="rect" id="node5" href="$d0/d86/structb3d_1_1KEYSChunk.html" title=" " alt="" coords="179,153,307,179"/>
+<area shape="rect" id="node6" href="$de/dd4/structb3d_1_1MESHChunk.html" title=" " alt="" coords="176,203,309,228"/>
+<area shape="rect" id="node7" href="$d1/dc1/structb3d_1_1NODEChunk.html" title=" " alt="" coords="176,252,309,277"/>
+<area shape="rect" id="node8" href="$dd/d4b/structb3d_1_1TEXSChunk.html" title=" " alt="" coords="179,301,307,327"/>
+<area shape="rect" id="node9" href="$d9/dbe/structb3d_1_1TRISChunk.html" title=" " alt="" coords="181,351,305,376"/>
+<area shape="rect" id="node10" href="$d9/d18/structb3d_1_1VRTSChunk.html" title=" " alt="" coords="179,400,307,425"/>
+</map>

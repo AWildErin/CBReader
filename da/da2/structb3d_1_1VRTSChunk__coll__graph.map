@@ -1,0 +1,11 @@
+<map id="b3d::VRTSChunk" name="b3d::VRTSChunk">
+<area shape="rect" id="node1" title=" " alt="" coords="1012,54,1140,79"/>
+<area shape="rect" id="node2" href="$d3/da7/structb3d_1_1B3DChunk.html" title=" " alt="" coords="739,18,862,43"/>
+<area shape="rect" id="node3" title=" " alt="" coords="426,14,513,39"/>
+<area shape="rect" id="node4" title=" " alt="" coords="23,5,162,45"/>
+<area shape="rect" id="node5" title=" " alt="" coords="695,75,907,115"/>
+<area shape="rect" id="node6" href="$de/d1a/structb3d_1_1VRTSChunk_1_1VRTSSubData.html" title="A vertex for a B3d Mesh." alt="" coords="357,118,581,143"/>
+<area shape="rect" id="node7" href="$de/d03/structcbtypes_1_1Vector3.html" title=" " alt="" coords="27,70,158,95"/>
+<area shape="rect" id="node8" href="$d2/d16/structcbtypes_1_1Color.html" title=" " alt="" coords="35,119,150,145"/>
+<area shape="rect" id="node9" title=" " alt="" coords="5,169,180,209"/>
+</map>

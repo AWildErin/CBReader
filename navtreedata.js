@@ -61,7 +61,10 @@ var NAVTREE =
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
-        [ "Variables", "namespacemembers_vars.html", null ]
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ],
+        [ "Enumerator", "namespacemembers_eval.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -71,7 +74,9 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
         [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "Variables", "functions_vars.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Enumerator", "functions_eval.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -82,7 +87,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"annotated.html",
+"d8/def/md_docs_pages_RMesh_Structure.html#autotoc_md7"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['x_0',['x',['../de/d03/structcbtypes_1_1Vector3.html#a27bd0aa9ffe538658eb13b8a7a25329c',1,'cbtypes::Vector3::x()'],['../da/de9/structcbtypes_1_1Vector2.html#a191276a497902031284c03ba3c4a021a',1,'cbtypes::Vector2::x()']]]
+  ['unknownchunks_0',['unknownChunks',['../de/d91/structb3d_1_1B3DModel.html#ae739618c270ab525fdc3872b89d85414',1,'b3d::B3DModel']]],
+  ['uv_1',['uv',['../d6/de1/structrmesh_1_1Vertex.html#aa30f14646049455c8fe6a01ac9ddf62c',1,'rmesh::Vertex']]]
 ];

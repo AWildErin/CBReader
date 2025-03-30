@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['hasnocoll_0',['hasNoColl',['../dd/da1/structrmesh_1_1Header.html#aa69385ec8c2ccf454df0c3cb65b9bd13',1,'rmesh::Header']]],
-  ['hastriggerbox_1',['hasTriggerBox',['../dd/da1/structrmesh_1_1Header.html#aeadc1fc9cdd7517281d1b013a1d50c4a',1,'rmesh::Header']]],
-  ['header_2',['header',['../dd/da1/structrmesh_1_1Header.html#acc931f86948755bb521c3194f9641647',1,'rmesh::Header::header()'],['../df/d1e/structrmesh_1_1RMesh.html#ac5aa15bef756276d66d7ddfcb477f214',1,'rmesh::RMesh::header()']]]
+  ['g_0',['g',['../d6/de1/structrmesh_1_1Vertex.html#ab34fd282f55e58fc1e33e93067ce6036',1,'rmesh::Vertex::g()'],['../d2/d16/structcbtypes_1_1Color.html#a2ede0155d70c9ed7eb371d340851a05a',1,'cbtypes::Color::g()']]]
 ];
