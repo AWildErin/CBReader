@@ -11,6 +11,9 @@ set(CBREADER_SRC
 
 	${CMAKE_CURRENT_LIST_DIR}/include/cbreader/rmesh.h
 	${CMAKE_CURRENT_LIST_DIR}/src/rmesh.cpp
+
+	${CMAKE_CURRENT_LIST_DIR}/include/cbreader/b3d.h
+	${CMAKE_CURRENT_LIST_DIR}/src/b3d.cpp
 )
 
 add_library(${PROJECT_NAME} STATIC ${CBREADER_SRC})
@@ -34,6 +37,7 @@ if(BUILD_TESTS)
 
     add_executable(${PROJECT_NAME}Test 
         "${CMAKE_CURRENT_LIST_DIR}/test/test_rmesh.cpp"
+        "${CMAKE_CURRENT_LIST_DIR}/test/test_b3d.cpp"
         "${CMAKE_CURRENT_LIST_DIR}/test/main.cpp"
     )
     target_link_libraries(${PROJECT_NAME}Test PUBLIC ${PROJECT_NAME} gtest_main)
